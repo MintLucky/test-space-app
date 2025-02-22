@@ -10,7 +10,6 @@ $color-gray: #f5f5f5;
 $color-bg: #304571;
 
 $border-radius: 1.5rem;
-$transition: all 0.3s ease;
 
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
@@ -22,8 +21,7 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
-$transition-duration: 0.3s;
-$transition-mode: ease-in-out;
+$transition-fast-ease: all 0.3s ease;
 
 /* Reset and base styles */
 * {
@@ -69,7 +67,7 @@ ul {
   }
 
   &--big {
-    max-width: 2500px;
+    max-width: 2200px;
   }
 }
 
@@ -116,7 +114,7 @@ ul {
       
       path {
         fill: $color-light;
-        transition: fill $transition-duration $transition-mode;
+        transition: $transition-fast-ease;
       }
     
       &:hover {
@@ -138,7 +136,7 @@ ul {
     height: 0;
     background-color: rgba(30, 14, 62, 0.95);
     overflow: hidden;
-    transition: height 0.3s ease;
+    transition: $transition-fast-ease;
     z-index: 5;
 
     &--open {
@@ -169,7 +167,7 @@ ul {
   &__link {
     font-size: 1rem;
     font-weight: 700;
-    transition: $transition;
+    transition: $transition-fast-ease;
 
     &:hover {
       background: linear-gradient(to right, $color-secondary, $color-primary);
@@ -206,7 +204,7 @@ ul {
     width: 100%;
     height: 2px;
     background-color: $color-light;
-    transition: all 0.3s ease;
+    transition: $transition-fast-ease;
   }
 
   &--open {
@@ -275,6 +273,23 @@ ul {
 
     &-highlight {
       color: $color-primary;
+    }
+  }
+
+  &__button {
+    &.button {
+      color: $color-dark;
+      background-color: $color-secondary;
+      border: none;
+  
+      &:hover {
+        background-color: darken($color-secondary, 20%);
+        color: darken($color-dark, 20%);
+      }
+  
+      @media (min-width: $breakpoint-md) {
+        font-size: 1.375rem;
+      }
     }
   }
 
@@ -370,10 +385,13 @@ ul {
 .card {
   border-radius: var(--border-radius);
   overflow: hidden;
-  height: 200px;
+  min-height: 350px;
   position: relative;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: $transition-fast-ease;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   
   &:hover {
     transform: translateY(-5px) scale(1.02);
@@ -393,7 +411,7 @@ ul {
     height: 100%;
     background: linear-gradient(to bottom, rgba(30, 14, 62, 0.5), rgba(30, 14, 62, 0.8));
     opacity: 0.6;
-    transition: opacity 0.3s ease;
+    transition: $transition-fast-ease;
   }
 
   &__content {
@@ -416,49 +434,30 @@ ul {
     margin-bottom: $spacing-lg;
     opacity: 0.8;
   }
-
-  /* Card variants */
-  &--reality {
-    background: url('./images/reality-bg.jpg') center/cover no-repeat;
-  }
-
-  &--stars-planets {
-    background: url('./images/stars-planets-bg.jpg') center/cover no-repeat;
-  }
-
-  &--dreamers {
-    background: url('./images/fantastic-dreams-bg.jpg') center/cover no-repeat;
-  }
-
-  &--dreams {
-    background: url('./images/dreams-bg.jpg') center/cover no-repeat;
-  }
 }
 
 /* Button */
 .button {
-  padding: 10px 25px;
-  border-radius: 25px;
+  padding: 0.875rem 1.5rem;
+  border-radius: 1.5rem;
   font-weight: 700;
-  border: none;
+  font-size: 1.375rem;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: $transition-fast-ease;
   align-self: flex-start;
-  background-color: $color-secondary;
+  background-color: transparent;
+  border: 2px solid $color-secondary;
+  color: $color-secondary;
+
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
 
   &:hover {
-    background-color: darken($color-secondary, 60%);
-  }
-
-  &--primary {
-    background-color: #b6ff00;
-    color: $color-dark;
-  }
-
-  &--secondary {
-    background-color: transparent;
-    border: 2px solid #b6ff00;
-    color: #b6ff00;
+    border-color: darken($color-secondary, 20%);
+    color: darken($color-secondary, 20%);
   }
 }
 

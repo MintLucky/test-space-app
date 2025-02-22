@@ -1,8 +1,55 @@
 import React, { useState } from 'react';
 import { ReactComponent as LogoImage } from './images/logo.svg';
 import { ReactComponent as ShoppingCartImage } from './images/shopping-cart-gradient.svg';
-import EarthImage from './images/earth.png';
+
 import './App.scss';
+
+import EarthImage from './images/earth.png';
+import CardImage1 from './images/card1-bg.jpg';
+import CardImage2 from './images/card2-bg.jpg';
+import CardImage3 from './images/card3-bg.jpg';
+import CardImage4 from './images/card4-bg.jpg';
+  
+
+const cardsContent = [
+  {
+    id: 1,
+    title: "Space is not just stars and planets",
+    subtitle: "Go on a space adventure",
+    image: CardImage1,
+  },
+  {
+    id: 2,
+    title: "For those who dream of stars",
+    subtitle: "Our offer make your dream come true",
+    image: CardImage2,
+  },
+  {
+    id: 3,
+    title: "Fulfill your fantastic dreams",
+    subtitle: "Space has never been so close",
+    image: CardImage3,
+  },
+  {
+    id: 4,
+    title: "Space is not just stars and planets",
+    subtitle: "Go on a space adventure",
+    image: CardImage4,
+  },
+]
+
+
+const Card = ({ title, subtitle, image }) => {
+  return (
+    <div className="card" style={{ backgroundImage: `url(${image})` }}>
+      <div className="card__content">
+        <h3 className="card__title">{title}</h3>
+        <p className="card__subtitle">{subtitle}</p>
+        <button className="button">Learn more</button>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,9 +62,9 @@ function App() {
     <div className="app">
       <header className="header">
         <div className="header__content-wrapper container">
-          <div className="header__logo">
+          <a href="#" className="header__logo">
             <LogoImage />
-          </div>
+          </a>
           <nav className={`nav ${menuOpen ? 'nav--open' : ''}`}>
             <ul className="nav__list">
               <li className="nav__item"><a href="#" className="nav__link">Home</a></li>
@@ -50,7 +97,7 @@ function App() {
               Discover the vast expanses of <span className="hero__title-highlight">space</span>
             </h1>
             <p className="hero__subtitle">Where the possibilities are <span className="hero__subtitle-highlight">endless</span>!</p>
-            <button className="button button--primary">Learn more</button>
+            <button className="hero__button button">Learn more</button>
           </div>
           <div className="hero__image">
             <img src={EarthImage} alt="Earth" className="hero__earth" />
@@ -61,39 +108,16 @@ function App() {
 
       <section className="offers container">
         <h2 className="offers__title">Offers</h2>
-        
         <div className="card-grid">
-          <div className="card-grid__item card card--reality">
-            <div className="card__content">
-              <h3 className="card__title">Move the borders of reality!</h3>
-              <p className="card__subtitle">Go on a space adventure - it's possible with us!</p>
-              <button className="button button--secondary">Learn more</button>
+          {cardsContent && cardsContent.map((card) => (
+            <div key={card.id} className="card-grid__item">
+              <Card 
+                title={card.title}
+                subtitle={card.subtitle}
+                image={card.image}
+              />
             </div>
-          </div>
-
-          <div className="card-grid__item card card--stars-planets">
-            <div className="card__content">
-              <h3 className="card__title">Space is not just stars and planets</h3>
-              <p className="card__subtitle">Go on a space adventure</p>
-              <button className="button button--secondary">Learn more</button>
-            </div>
-          </div>
-
-          <div className="card-grid__item card card--dreamers">
-            <div className="card__content">
-              <h3 className="card__title">For those who dream of stars</h3>
-              <p className="card__subtitle">Our offer make your dream come true</p>
-              <button className="button button--secondary">Learn more</button>
-            </div>
-          </div>
-
-          <div className="card-grid__item card card--dreams">
-            <div className="card__content">
-              <h3 className="card__title">Fulfill your fantastic dreams</h3>
-              <p className="card__subtitle">Space has never been so close</p>
-              <button className="button button--secondary">Learn more</button>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
