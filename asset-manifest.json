@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/test-space-app/static/css/main.993dd3e8.css",
-    "main.js": "/test-space-app/static/js/main.2d22e579.js",
+    "main.css": "/test-space-app/static/css/main.c41bf321.css",
+    "main.js": "/test-space-app/static/js/main.3ef18215.js",
     "static/js/453.5ec15ab6.chunk.js": "/test-space-app/static/js/453.5ec15ab6.chunk.js",
     "static/media/rocket.svg": "/test-space-app/static/media/rocket.bf2dbb7c0c33ada062ba83af3725edbe.svg",
     "static/media/space-bg-lg.jpg": "/test-space-app/static/media/space-bg-lg.248752a531fb15c86c03.jpg",
@@ -10,17 +10,17 @@
     "static/media/card4-bg.jpg": "/test-space-app/static/media/card4-bg.39bd1d01ee8ab9a726fb.jpg",
     "static/media/card1-bg.jpg": "/test-space-app/static/media/card1-bg.6b7644ab38dc24282e02.jpg",
     "static/media/card2-bg.jpg": "/test-space-app/static/media/card2-bg.22d7f059f646d63939ef.jpg",
-    "static/media/card3-bg.jpg": "/test-space-app/static/media/card3-bg.b561f01cc451447ca08b.jpg",
+    "static/media/card3-bg.jpg": "/test-space-app/static/media/card3-bg.332c9180c6206b0255da.jpg",
     "static/media/earth.png": "/test-space-app/static/media/earth.916b2de844f419a0d0bb.png",
     "static/media/logo.svg": "/test-space-app/static/media/logo.f4153131d3955bdfa609912a9f3b5caf.svg",
     "static/media/shopping-cart-gradient.svg": "/test-space-app/static/media/shopping-cart-gradient.126bfb6477de9016f0419158e4c169ee.svg",
     "index.html": "/test-space-app/index.html",
-    "main.993dd3e8.css.map": "/test-space-app/static/css/main.993dd3e8.css.map",
-    "main.2d22e579.js.map": "/test-space-app/static/js/main.2d22e579.js.map",
+    "main.c41bf321.css.map": "/test-space-app/static/css/main.c41bf321.css.map",
+    "main.3ef18215.js.map": "/test-space-app/static/js/main.3ef18215.js.map",
     "453.5ec15ab6.chunk.js.map": "/test-space-app/static/js/453.5ec15ab6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.993dd3e8.css",
-    "static/js/main.2d22e579.js"
+    "static/css/main.c41bf321.css",
+    "static/js/main.3ef18215.js"
   ]
 }
