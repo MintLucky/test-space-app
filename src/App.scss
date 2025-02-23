@@ -46,7 +46,21 @@ body {
   color: $color-light;
   background-color: $color-bg;
 }
+/* Mixins */
+@mixin basic-text-style {
+  font-size: 0.825rem;
+  line-height: 1rem;
 
+  @media (min-width: $breakpoint-md) {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
 /* Typography */
 h1 {
   font-size: 2.25rem;
@@ -79,18 +93,7 @@ h2 {
 }
 
 p {
-  font-size: 0.825rem;
-  line-height: 1rem;
-
-  @media (min-width: $breakpoint-md) {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
-
-  @media (min-width: $breakpoint-xl) {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-  }
+  @include basic-text-style;
 }
 
 /* BEM Components */
@@ -580,18 +583,42 @@ p {
   }
 
   &__text {
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-md;
     opacity: 0.6;
+
+    &-extra {
+      display: none;
+
+      &:has(~ input[type="checkbox"]:checked) {
+        display: block;
+      }
+    }
   }
 
-  &__button {
-    font-size: 1.25rem;
+  input[type="checkbox"] {
+    height: 1px;
+    display: block;
+    appearance: none;
+    
+    &:checked {
+      ~ label:before {
+          content: "Read Less";
+        }
+    }
+  }
+
+  label {
+    @include basic-text-style;
     color: $color-secondary;
-    border: none;
-    padding: 0;
+    cursor: pointer;
+    transition: $transition-fast-ease;
 
     &:hover {
       color: darken($color-secondary, 20%)
+    }
+
+    &:before {
+      content: "Read More";
     }
   }
 }

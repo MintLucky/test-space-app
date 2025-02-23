@@ -130,8 +130,12 @@ function App() {
         <p className="journey__text">
           Traveling into space is one of the most exciting and unforgettable adventures that can change your life forever. And if you have ever dreamed of exploring stars, planets and galaxies, then our company is ready to help you make this dream come true. Our space tourism program offers a unique opportunity to see the Earth from a height of several hundred kilometers and feel that every moment is spent with incredible impressions. Experience and see for yourself! Our ship is equipped with the most modern technology and comfort so that you can fully enjoy your adventure in space. We offer several different tour packages that will suit the needs of both beginners and experienced space travelers.
         </p>
-        <button className="button journey__button">Read more</button>
-      </section>
+        <p className="journey__text journey__text-extra">
+          Traveling into space is one of the most exciting and unforgettable adventures that can change your life forever. And if you have ever dreamed of exploring stars, planets and galaxies, then our company is ready to help you make this dream come true. Our space tourism program offers a unique opportunity to see the Earth from a height of several hundred kilometers and feel that every moment is spent with incredible impressions. Experience and see for yourself! Our ship is equipped with the most modern technology and comfort so that you can fully enjoy your adventure in space. We offer several different tour packages that will suit the needs of both beginners and experienced space travelers.
+        </p>
+        <input type="checkbox" id="journey_btn" />
+        <label for="journey_btn"></label>
+        </section>
 
       <footer className="footer">
         <div className="footer__content container">
