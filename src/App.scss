@@ -464,21 +464,20 @@ p {
 .card {
   border-radius: var(--border-radius);
   overflow: hidden;
-  min-height: 350px;
+  min-height: 320px;
   position: relative;
   padding: $spacing-lg;
   transition: $transition-fast-ease;
+  padding: $spacing-xl $spacing-lg $spacing-lg $spacing-lg;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  padding-top: 4rem;
-
+  
   @media (min-width: $breakpoint-lg) {
-    padding-top: $spacing-xl;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: $spacing-md;
+    min-height: 350px;
+    padding-left: $spacing-xl;
+    padding-right: $spacing-xl;
   }
   
   &:hover {
@@ -496,6 +495,11 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    @media (max-width: $breakpoint-lg) {
+      justify-content: flex-end;
+      padding-bottom: $spacing-md;
+    }
   }
 
   &__title {
