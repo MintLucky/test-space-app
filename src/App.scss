@@ -202,6 +202,7 @@ h2 {
 
     &:hover {
       background: linear-gradient(to right, $color-secondary, $color-primary);
+      background-clip: text;
       -webkit-background-clip: text;
       -moz-background-clip: text;
       -webkit-text-fill-color: transparent; 
@@ -305,6 +306,7 @@ h2 {
 
   &__title {
     margin-bottom: $spacing-lg;
+    
     &-highlight {
       color: $color-primary;
     }
@@ -387,10 +389,16 @@ h2 {
 /* Offers Section */
 .offers {
   margin-top: $spacing-lg;
-  margin-bottom: $spacing-lg;
+  @media (min-width: $breakpoint-md) {
+    margin-top: $spacing-xl;
+  }
+
   &__title {
-    font-size: 1.8rem;
     margin-bottom: $spacing-lg;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: $spacing-xl;
+    }
   }
 }
 
@@ -443,11 +451,20 @@ h2 {
   overflow: hidden;
   min-height: 350px;
   position: relative;
-  cursor: pointer;
+  padding: $spacing-lg;
   transition: $transition-fast-ease;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  padding-top: 4rem;
+
+  @media (min-width: $breakpoint-lg) {
+    padding-top: $spacing-xl;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: $spacing-md;
+  }
   
   &:hover {
     transform: translateY(-5px) scale(1.02);
@@ -458,22 +475,9 @@ h2 {
     }
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(30, 14, 62, 0.5), rgba(30, 14, 62, 0.8));
-    opacity: 0.6;
-    transition: $transition-fast-ease;
-  }
-
   &__content {
     position: relative;
     z-index: 1;
-    padding: $spacing-lg;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -483,12 +487,40 @@ h2 {
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: $spacing-sm;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    max-width: 326px;
+    @media (min-width: $breakpoint-lg) {
+      font-size: 2.875rem;
+      line-height: 2.875rem;
+    }
+
+    &--big {
+      @media (min-width: $breakpoint-lg) {
+        font-size: 4.625rem;
+        line-height: 4.625rem;
+        max-width: 692px;
+
+      }
+    }
   }
 
   &__subtitle {
     font-size: 1rem;
+    line-height: 1.2rem;
     margin-bottom: $spacing-lg;
-    opacity: 0.8;
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+    }
+
+    &--big {
+      @media (min-width: $breakpoint-lg) {
+        font-size: 1.625rem;
+        line-height: 1.95rem;
+      }
+    }
   }
 }
 
@@ -520,11 +552,12 @@ h2 {
 /* Journey Section */
 .journey {
   margin-top: $spacing-lg;
-  margin-bottom: $spacing-lg;
+  @media (min-width: $breakpoint-md) {
+    margin-top: $spacing-xl;
+  }
 
   &__title {
-    font-size: 1.5rem;
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-lg;
   }
 
   &__text {
@@ -536,7 +569,11 @@ h2 {
 
 /* Footer */
 .footer {
-  padding: $spacing-md;
+  margin-top: $spacing-lg;
+  @media (min-width: $breakpoint-md) {
+    margin-top: $spacing-xl;
+  }
+
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background-color: $color-dark;
 

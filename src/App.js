@@ -14,15 +14,16 @@ import CardImage4 from './images/card4-bg.jpg';
 const cardsContent = [
   {
     id: 1,
-    title: "Space is not just stars and planets",
-    subtitle: "Go on a space adventure",
-    image: CardImage1,
-  },
-  {
-    id: 2,
     title: "For those who dream of stars",
     subtitle: "Our offer make your dream come true",
     image: CardImage2,
+    isBig: true,
+  },
+  {
+    id: 2,
+    title: "Space is not just stars and planets",
+    subtitle: "Go on a space adventure",
+    image: CardImage1,
   },
   {
     id: 3,
@@ -35,16 +36,17 @@ const cardsContent = [
     title: "Space is not just stars and planets",
     subtitle: "Go on a space adventure",
     image: CardImage4,
+    isBig: true,
   },
 ]
 
 
-const Card = ({ title, subtitle, image }) => {
+const Card = ({ title, subtitle, image, isBig = false }) => {
   return (
-    <div className="card" style={{ backgroundImage: `url(${image})` }}>
+    <div className="card" style={{ backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(15, 20, 32, 0.79) 100%), url(${image})` }}>
       <div className="card__content">
-        <h3 className="card__title">{title}</h3>
-        <p className="card__subtitle">{subtitle}</p>
+        <h3 className={"card__title " + (isBig ? "card__title--big" : "")}>{title}</h3>
+        <p className={"card__subtitle " + (isBig ? "card__subtitle--big" : "")}>{subtitle}</p>
         <button className="button">Learn more</button>
       </div>
     </div>
@@ -115,6 +117,7 @@ function App() {
                 title={card.title}
                 subtitle={card.subtitle}
                 image={card.image}
+                isBig={card?.isBig}
               />
             </div>
           ))}
