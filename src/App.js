@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ReactComponent as LogoImage } from './images/logo.svg';
 import { ReactComponent as ShoppingCartImage } from './images/shopping-cart-gradient.svg';
 
 import './App.scss';
 
+import { ReactComponent as LogoImage } from './images/logo.svg';
+import { ReactComponent as RocketImage } from './images/rocket.svg';
 import EarthImage from './images/earth.png';
 import CardImage1 from './images/card1-bg.jpg';
 import CardImage2 from './images/card2-bg.jpg';
@@ -96,9 +97,9 @@ function App() {
         <div className='hero__content-wrapper container'>
           <div className="hero__content">
             <h1 className="hero__title">
-              Discover the vast expanses of <span className="hero__title-highlight">space</span>
+              Discover the vast expanses of <span className="hero__title--highlight">space</span>
             </h1>
-            <p className="hero__subtitle">Where the possibilities are <span className="hero__subtitle-highlight">endless</span>!</p>
+            <p className="hero__subtitle">Where the possibilities are <span className="hero__subtitle--highlight">endless</span>!</p>
             <button className="hero__button button">Learn more</button>
           </div>
           <div className="hero__image">
@@ -129,11 +130,12 @@ function App() {
         <p className="journey__text">
           Traveling into space is one of the most exciting and unforgettable adventures that can change your life forever. And if you have ever dreamed of exploring stars, planets and galaxies, then our company is ready to help you make this dream come true. Our space tourism program offers a unique opportunity to see the Earth from a height of several hundred kilometers and feel that every moment is spent with incredible impressions. Experience and see for yourself! Our ship is equipped with the most modern technology and comfort so that you can fully enjoy your adventure in space. We offer several different tour packages that will suit the needs of both beginners and experienced space travelers.
         </p>
+        <button className="button journey__button">Read more</button>
       </section>
 
       <footer className="footer">
         <div className="footer__content container">
-          <div className="footer__icon">🚀</div>
+          <div className="footer__icon"><RocketImage /></div>
           <p className="footer__text">Exciting space adventures!</p>
         </div>
       </footer>
