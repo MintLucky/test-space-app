@@ -55,11 +55,7 @@ const Card = ({ title, subtitle, image, isBig = false }) => {
 }
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   return (
     <div className="app">
@@ -68,7 +64,7 @@ function App() {
           <a href="#" className="header__logo">
             <LogoImage />
           </a>
-          <nav className={`nav ${menuOpen ? 'nav--open' : ''}`}>
+          <nav className={`nav ${isMenuOpened ? 'nav--open' : ''}`}>
             <ul className="nav__list">
               <li className="nav__item"><a href="#" className="nav__link">Home</a></li>
               <li className="nav__item"><a href="#" className="nav__link">Products</a></li>
@@ -83,8 +79,8 @@ function App() {
           </nav>
           
           <button 
-            className={"burger-menu " + (menuOpen ? " burger-menu--open" : "")} 
-            onClick={toggleMenu}
+            className={"burger-menu " + (isMenuOpened ? " burger-menu--open" : "")} 
+            onClick={() => setIsMenuOpened(opened => !opened)}
           >
             <span className="burger-menu__line"></span>
             <span className="burger-menu__line"></span>
