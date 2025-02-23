@@ -1,9 +1,9 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700;800&display=swap");
 
 /* Variables */
 $color-primary: #ff00ff;
-$color-secondary: #EBFF00;
+$color-secondary: #ebff00;
 $color-dark: #000000;
 $color-light: #ffffff;
 $color-gray: #f5f5f5;
@@ -41,7 +41,7 @@ ul {
 
 /* Basic */
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   color: $color-light;
   background-color: $color-bg;
@@ -126,7 +126,6 @@ p {
 
 /* Header */
 .header {
-  
   position: relative;
   z-index: 10;
   background-color: $color-dark;
@@ -154,18 +153,18 @@ p {
             &:first-child {
               stop-color: $color-secondary;
             }
-            &:last-child {  
+            &:last-child {
               stop-color: $color-primary;
             }
           }
         }
       }
-      
+
       path {
         fill: $color-light;
         transition: $transition-fast-ease;
       }
-    
+
       &:hover {
         path {
           fill: url(#hover-gradient);
@@ -195,7 +194,7 @@ p {
 
   &__list {
     display: flex;
-    
+
     @media (max-width: $breakpoint-md) {
       flex-direction: column;
       justify-content: center;
@@ -207,7 +206,7 @@ p {
 
   &__item {
     margin: 0 $spacing-md;
-    
+
     @media (max-width: $breakpoint-md) {
       margin: 0;
     }
@@ -223,10 +222,10 @@ p {
       background-clip: text;
       -webkit-background-clip: text;
       -moz-background-clip: text;
-      -webkit-text-fill-color: transparent; 
+      -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
     }
-    
+
     @media (max-width: $breakpoint-md) {
       font-size: 1.5rem;
     }
@@ -245,7 +244,7 @@ p {
   cursor: pointer;
   padding: 0;
   z-index: 10;
-  
+
   @media (max-width: $breakpoint-md) {
     display: flex;
   }
@@ -274,27 +273,30 @@ p {
 
 /* Hero Section */
 .hero {
-  $bg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0) -0.52%, rgba(15, 20, 32, 0.79) 99.48%);
-  
+  $bg-gradient: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) -0.52%,
+    rgba(15, 20, 32, 0.79) 99.48%
+  );
+
   padding-top: $spacing-xl;
   padding-bottom: $spacing-xl;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('./images/space-bg-sm.jpg');  /* fallback */
-  background-image: $bg-gradient, url('./images/space-bg-sm.jpg');
-
+  background-image: url("./images/space-bg-sm.jpg"); /* fallback */
+  background-image: $bg-gradient, url("./images/space-bg-sm.jpg");
 
   @media (min-width: $breakpoint-md) {
-    background-image: url('./images/space-bg-md.jpg'); /* fallback */
-    background-image: $bg-gradient, url('./images/space-bg-md.jpg');
+    background-image: url("./images/space-bg-md.jpg"); /* fallback */
+    background-image: $bg-gradient, url("./images/space-bg-md.jpg");
   }
 
   @media (min-width: $breakpoint-xl) {
-    background-image: url('./images/space-bg-lg.jpg'); /* fallback */
-    background-image: $bg-gradient, url('./images/space-bg-lg.jpg');
+    background-image: url("./images/space-bg-lg.jpg"); /* fallback */
+    background-image: $bg-gradient, url("./images/space-bg-lg.jpg");
   }
-  
+
   &__content-wrapper {
     display: flex;
     flex-direction: column;
@@ -314,7 +316,7 @@ p {
     max-width: 600px;
     z-index: 1;
     order: 2;
-    
+
     @media (min-width: $breakpoint-md) {
       text-align: left;
       padding-right: $spacing-md;
@@ -324,7 +326,7 @@ p {
 
   &__title {
     margin-bottom: $spacing-lg;
-    
+
     &--highlight {
       color: $color-primary;
     }
@@ -340,7 +342,7 @@ p {
       font-size: 1.375rem;
       line-height: 1.625rem;
     }
-  
+
     @media (min-width: $breakpoint-xl) {
       font-size: 2rem;
       line-height: 2.25rem;
@@ -356,12 +358,12 @@ p {
       color: $color-dark;
       background-color: $color-secondary;
       border: none;
-  
+
       &:hover {
         background-color: darken($color-secondary, 20%);
         color: darken($color-dark, 20%);
       }
-  
+
       @media (min-width: $breakpoint-md) {
         font-size: 1.375rem;
       }
@@ -374,7 +376,7 @@ p {
     order: 1;
     margin-top: -120px;
     max-width: 327px;
-    
+
     @media (min-width: $breakpoint-md) {
       margin-top: 0;
       order: 2;
@@ -426,8 +428,7 @@ p {
   grid-template-columns: 1fr;
   gap: $spacing-xl;
   width: 100%;
-  
-  
+
   @media (min-width: $breakpoint-md) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -462,7 +463,6 @@ p {
   }
 }
 
-
 /* Cards */
 .card {
   border-radius: var(--border-radius);
@@ -476,17 +476,17 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   @media (min-width: $breakpoint-lg) {
     min-height: 350px;
     padding-left: $spacing-xl;
     padding-right: $spacing-xl;
   }
-  
+
   &:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    
+
     &::before {
       opacity: 0.7;
     }
@@ -522,7 +522,6 @@ p {
         font-size: 4.625rem;
         line-height: 4.625rem;
         max-width: 692px;
-
       }
     }
   }
@@ -558,7 +557,6 @@ p {
   background-color: transparent;
   border: 2px solid $color-secondary;
   color: $color-secondary;
-
 
   @media (max-width: $breakpoint-md) {
     padding: 0.5rem 1.5rem;
@@ -599,11 +597,11 @@ p {
     height: 1px;
     display: block;
     appearance: none;
-    
+
     &:checked {
       ~ label:before {
-          content: "Read Less";
-        }
+        content: "Read Less";
+      }
     }
   }
 
@@ -614,7 +612,7 @@ p {
     transition: $transition-fast-ease;
 
     &:hover {
-      color: darken($color-secondary, 20%)
+      color: darken($color-secondary, 20%);
     }
 
     &:before {
@@ -633,7 +631,6 @@ p {
 
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background-color: $color-dark;
-
 
   &__content {
     display: flex;
@@ -658,9 +655,9 @@ p {
   }
 }
 
-@keyframes spin { 
-  100% { 
-    -webkit-transform: rotate(360deg); 
-    transform:rotate(360deg); 
-  } 
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
