@@ -11,10 +11,10 @@ $color-bg: #304571;
 
 $border-radius: 1.5rem;
 
-$spacing-sm: 0.5rem;
+$spacing-sm: 0.625rem;
 $spacing-md: 1rem;
 $spacing-lg: 1.5rem;
-$spacing-xl: 2rem;
+$spacing-xl: 2.5rem;
 
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
@@ -30,14 +30,6 @@ $transition-fast-ease: all 0.3s ease;
   box-sizing: border-box;
 }
 
-/* Home */
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  color: $color-light;
-  background-color: $color-bg;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -45,6 +37,45 @@ a {
 
 ul {
   list-style: none;
+}
+
+/* Basic */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: $color-light;
+  background-color: $color-bg;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 1.5rem;
+    line-height: 1.825rem;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 }
 
 /* BEM Components */
@@ -224,17 +255,25 @@ ul {
 
 /* Hero Section */
 .hero {
+  $bg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0) -0.52%, rgba(15, 20, 32, 0.79) 99.48%);
+  
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('./images/space-bg-sm.jpg');
+  background-image: url('./images/space-bg-sm.jpg');  /* fallback */
+  background-image: $bg-gradient, url('./images/space-bg-sm.jpg');
+
 
   @media (min-width: $breakpoint-md) {
-    background-image: url('./images/space-bg-md.jpg');
+    background-image: url('./images/space-bg-md.jpg'); /* fallback */
+    background-image: $bg-gradient, url('./images/space-bg-md.jpg');
   }
 
   @media (min-width: $breakpoint-xl) {
-    background-image: url('./images/space-bg-lg.jpg');
+    background-image: url('./images/space-bg-lg.jpg'); /* fallback */
+    background-image: $bg-gradient, url('./images/space-bg-lg.jpg');
   }
   
   &__content-wrapper {
@@ -259,31 +298,36 @@ ul {
     
     @media (min-width: $breakpoint-md) {
       text-align: left;
-      padding-right: $spacing-xl;
+      padding-right: $spacing-md;
       order: 1;
     }
   }
 
   &__title {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: $spacing-md;
-    
-    @media (min-width: $breakpoint-md) {
-      font-size: 2.5rem;
-    }
-
+    margin-bottom: $spacing-lg;
     &-highlight {
       color: $color-primary;
     }
   }
 
   &__subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.375rem;
     margin-bottom: $spacing-lg;
+    font-weight: 800;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.375rem;
+      line-height: 1.625rem;
+    }
+  
+    @media (min-width: $breakpoint-xl) {
+      font-size: 2rem;
+      line-height: 2.25rem;
+    }
 
     &-highlight {
-      color: $color-primary;
+      color: $color-secondary;
     }
   }
 
@@ -309,6 +353,7 @@ ul {
     margin-top: $spacing-lg;
     order: 1;
     margin-top: -120px;
+    max-width: 327px;
     
     @media (min-width: $breakpoint-md) {
       margin-top: 0;
@@ -353,7 +398,7 @@ ul {
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $spacing-lg;
+  gap: $spacing-xl;
   width: 100%;
   
   
