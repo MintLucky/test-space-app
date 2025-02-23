@@ -181,6 +181,7 @@ function App() {
             <RocketImage />
           </div>
           <p className="footer__text">Exciting space adventures!</p>
+          <p className="footer__text footer__text--small">&copy; 2025 created by Alex B.</p>
         </div>
       </footer>
     </div>
